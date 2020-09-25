@@ -15,6 +15,11 @@ class CheckoutController extends Controller
         return view('pages.login');
     }
 
+    public function new_login_check()
+    {
+        return view('pages.new_login');
+    }
+
     public function customer_registration(Request $request)
     {
         $data=array();
@@ -22,26 +27,44 @@ class CheckoutController extends Controller
         $data['customer_email']=$request->customer_email;
         $data['password']=md5($request->password);
         $data['mobile_number']=$request->mobile_number;
+        DB::table('tbl_customer')->insert($data);
 
-        $customer_id=DB::table('tbl_customer')
-                    ->insertGetId($data);
+        // $customer_id=DB::table('tbl_customer')
+        //             ->insertGetId($data);
 
-        Session::put('customer_id',$customer_id);
-        Session::put('customer_name',$request->customer_name);
-        return Redirect('/checkout');
+        // Session::put('customer_id',$customer_id);
+        // Session::put('customer_name',$request->customer_name);
+        Session::put('successmsg', 'Successfully registered! Login to continue shopping.');
+        return Redirect::to('/new-login-check');
 
     }
 
-    public function checkout()
+    public function customer_login(Request $request)
     {
-        //$all_published_category=DB::table('tbl_category')
-        //                        ->where('publication_status',1)
-        //                        ->get();
-        //$manage_published_category=view('pages.checkout')
-        //                    ->with('all_published_category',$all_published_category);
-        //return view('layout')
-        //            ->with('pages.checkout',$manage_published_category);
+        $customer_email=$request->customer_email;
+        $password=md5($request->password);
+        $result=DB::table('tbl_customer')
+                ->where('customer_email',$customer_email)
+                ->where('password',$password)
+                ->first();
 
+        if($result) {
+            Session::put('customer_id',$result->customer_id);
+            return Redirect::to('/');
+        }else {
+            Session::put('message', 'Email or Password Invalid');
+            return Redirect::to('/login-check');
+        }
+    }
+
+    public function customer_logout()
+    {
+        Session::flush();
+        return Redirect::to('/');
+    }
+
+    public function checkout()
+    { 
         return view('pages.checkout');
     }
 
@@ -59,29 +82,6 @@ class CheckoutController extends Controller
             ->insertGetId($data);
         Session::put('shipping_id',$shipping_id);
         return Redirect::to('/payment');
-    }
-
-    public function customer_login(Request $request)
-    {
-        $customer_email=$request->customer_email;
-        $password=md5($request->password);
-        $result=DB::table('tbl_customer')
-                ->where('customer_email',$customer_email)
-                ->where('password',$password)
-                ->first();
-
-        if($result) {
-            Session::put('customer_id',$result->customer_id);
-            return Redirect::to('/checkout');
-        }else {
-            return Redirect::to('/login-check');
-        }
-    }
-
-    public function customer_logout()
-    {
-        Session::flush();
-        return Redirect::to('/');
     }
 
     public function payment()

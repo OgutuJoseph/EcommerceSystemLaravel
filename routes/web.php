@@ -29,6 +29,7 @@ Route::post('/update-cart','App\Http\Controllers\CartController@update_cart');
 
 //Checkout routes are here... 
 Route::get('/login-check','App\Http\Controllers\CheckoutController@login_check');
+Route::get('/new-login-check','App\Http\Controllers\CheckoutController@new_login_check');
 Route::post('/customer-registration','App\Http\Controllers\CheckoutController@customer_registration');
 Route::get('/checkout','App\Http\Controllers\CheckoutController@checkout');
 Route::post('/save-shipping-details','App\Http\Controllers\CheckoutController@save_shipping_details');

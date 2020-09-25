@@ -5,12 +5,12 @@
         <div class="row">
             <div class="col-sm-3 col-sm-offset-1">
                 <div class="login-form"><!--login form-->
-                <p class="alert-danger">
+                    <p class="alert-success">
 					<?php
-					$message=Session::get('message');
+					$message=Session::get('successmsg');
 						if($message){
 							echo $message;
-							Session::put('message',null);
+							Session::put('successmsg',null);
 						}
 					?>
 					</p>
@@ -23,11 +23,11 @@
                     </form>
                 </div><!--/login form-->
             </div>
-            <div class="col-sm-1">
+            <!-- <div class="col-sm-1">
                 <h2 class="or">OR</h2>
-            </div>
-            <div class="col-sm-4">
-                <div class="signup-form"><!--sign up form-->
+            </div> -->
+            <!-- <div class="col-sm-4">
+                <div class="signup-form">
                     <h2>New User Signup!</h2>
                     <form action="{{url('/customer-registration')}}" method="post">
                         {{ csrf_field() }}
@@ -37,8 +37,8 @@
                         <input type="text" name="mobile_number" placeholder="Mobile Number"/>
                         <button type="submit" class="btn btn-default">Signup</button>
                     </form>
-                </div><!--/sign up form-->
-            </div>
+                </div>
+            </div> -->
         </div>
     </div>
 </section><!--/form-->
