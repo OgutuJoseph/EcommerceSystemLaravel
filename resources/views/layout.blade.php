@@ -242,8 +242,8 @@
 						<div class="price-range"><!--price-range-->
 							<h2>Price Range</h2>
 							<div class="well text-center">
-								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
+								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="50000" data-slider-step="100" data-slider-value="[10000,25000]" id="sl2" ><br />
+								 <b class="pull-left">KES/- 0</b> <b class="pull-right">KES/- 50,000</b>
 							</div>
 						</div><!--/price-range-->
 						
@@ -269,7 +269,7 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="companyinfo">
-							<h2><span>e</span>-shopper</h2>
+							<h2><span>E-Commerce</span>-System</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
 						</div>
 					</div>
@@ -385,7 +385,7 @@
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<h2>About Us</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Company Information</a></li>
 								<li><a href="#">Careers</a></li>
@@ -397,7 +397,7 @@
 					</div>
 					<div class="col-sm-3 col-sm-offset-1">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<h2>Subscribe</h2>
 							<form action="#" class="searchform">
 								<input type="text" placeholder="Your email address" />
 								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
@@ -413,7 +413,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-left">Copyright © 2020 E-Commerce System. Developed by Joseph.</p>
 					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
 				</div>
 			</div>
