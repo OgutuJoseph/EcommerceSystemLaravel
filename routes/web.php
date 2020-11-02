@@ -43,6 +43,28 @@ Route::get('/payment','App\Http\Controllers\CheckoutController@payment');
 Route::post('/order-place','App\Http\Controllers\CheckoutController@place_order');
 
 
+//Service Section
+Route::get('/online-help','App\Http\Controllers\HomeController@online_help');
+Route::get('/contact','App\Http\Controllers\HomeController@contact_us');
+Route::get('/faq','App\Http\Controllers\HomeController@faqs');
+
+//QuickShop Section
+Route::get('/mens','App\Http\Controllers\HomeController@mens');
+Route::get('/womens','App\Http\Controllers\HomeController@womens');
+Route::get('/electronics','App\Http\Controllers\HomeController@electronics');
+Route::get('/furniture','App\Http\Controllers\HomeController@furniture');
+
+//Policies Section
+Route::get('/terms-of-use','App\Http\Controllers\HomeController@terms_of_use');
+Route::get('/privacy-policy','App\Http\Controllers\HomeController@privacy_policy');
+Route::get('/refund-policy','App\Http\Controllers\HomeController@refund_policy');
+Route::get('/billing-system','App\Http\Controllers\HomeController@billing_system');
+
+//About Section
+Route::get('/company-information','App\Http\Controllers\HomeController@company_information');
+Route::get('/careers','App\Http\Controllers\HomeController@careers');
+Route::get('/store-location','App\Http\Controllers\HomeController@store_location');
+Route::get('/copyright','App\Http\Controllers\HomeController@copyright');
 
 
 
