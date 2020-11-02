@@ -9,30 +9,38 @@
                         <li data-target="#slider-carousel" data-slide-to="2"></li>
                     </ol>
                     
+                
                     <div class="carousel-inner">
-                        <?php 
-                        $all_published_slider=DB::table('tbl_slider')
-                                                ->where('publication_status',1)
-                                                ->get();
-                        $i=1;
-                        foreach($all_published_slider as $v_slider) {
-                            if($i==1){
-                        ?>
                         <div class="item active">
-                            <?php }else{ ?>
-                                <div class="item">
-                            <?php } ?> 
-							<div class="col-sm-4">
-								<h1>E-Commerce System</h1>
-								<p>Welcome to the online shopping store offering you a variety in products at very affordable prices!</p>
-							</div>
-                            <div class="col-sm-8">
-                                <img src="{{URL::to($v_slider->slider_image)}}" class="girl img-responsive" alt="" style="height: 300px; width: 8	00px;" />
-                                <img src=" "  class="pricing" alt="" />
+                            <div class="col-sm-4">
+                                <h1>E-Commerce</h1>
+                                <p>Welcome to the online shopping store offering you a variety in products at very affordable prices!</p> 
                             </div>
-                        </div> 	
-                        <?php $i++; } ?>						
-                    </div>
+                            <div class="col-sm-8">
+                                <img src="{{ URL::to('frontend/images/Slider/ecommerce.jpeg') }}" class="girl img-responsive" alt="" style="height: 300px; width: 400px;" /> 
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-4">
+                                <h1>E-Commerce</h1>
+                                <p>Welcome to the online shopping store offering you a variety in products at very affordable prices!</p> 
+                            </div>
+                            <div class="col-sm-8">
+                                <img src="{{ URL::to('frontend/images/Slider/happyshop.jpeg') }}" class="girl img-responsive" alt="" style="height: 300px; width: 400px;" />
+                            </div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="col-sm-4">
+                                <h1>E-Commerce</h1>
+                                <p>Welcome to the online shopping store offering you a variety in products at very affordable prices!</p> 
+                            </div>
+                            <div class="col-sm-8">
+                                <img src="{{ URL::to('frontend/images/Slider/shopstore.png') }}" class="girl img-responsive" alt="" style="height: 300px; width: 400px;" />
+                            </div>
+                        </div>
+							
+					</div>
                     
                     <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
                         <i class="fa fa-angle-left"></i>
